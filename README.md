@@ -48,3 +48,42 @@ gunzip owt_valid.txt.gz
 cd ..
 ```
 
+## Run model
+Model source codes are updated in `cs336_basics` and has passed most tests except for the time and memory limits of BPE. Function modules are built from scratch instead of importing from PyTorch!
+
+### BPE
+First, download datasets in `../data/` as described above. To train a byte pair encoding model on `TinyStoriesV2-GPT4-train.txt` as an example:
+```
+python -m cs336_basics.train_bpe
+```
+This will generate two files: `../results/vocab.json` (token vocabulary with IDs) and `../results/merges.txt` (merges of token pairs in order).
+
+### Tokenization
+To run a tokenizer on `TinyStoriesV2-GPT4-train.txt`:
+```
+python -m cs336_basics.tokenizer
+```
+This will encode the text file into token IDs.
+
+### Model training
+To train the transformer-based language model:
+```
+python -m cs336_basics.training_together --input "../results/tokens.npy" --checkpoint "../results/checkpoint.pt"
+```
+This will generate a trained model in the checkpoint file.
+
+Here we use an example model including 4 transformer blocks with 16 heads multi-head attention, as well as classic pre-Norm, SwiGLU activation, and rotary position encoding. For training, we use AdamW optimizer with cosine annealing learning rate scheduling and gradient clipping. Users are encouraged to test different parameters. To list all parameters, run `python -m cs336_basics.training_together --help`.
+
+### Text generation
+To generate text from an initial sentence using the model:
+```
+python -m cs336_basics.decoding --init "Once upon a time, " --checkpoint "../results/checkpoint.pt" --vocab "../results/vocab.json" --merges "../results/merges.txt"
+```
+This will print out a tiny story. Here is one example:
+```
+Once upon a time, there was a little boy named Tom. Tom liked to play outside with his friends. One day, Tom and his friends decided to have a big party. They invited all their friends and family. The party was very happy to go to the party for the guests.
+At the party, they played games, ate yummy treats, and had lots of fun. Tom was not lay anymore. He played all day long and had lots...
+```
+Not perfect but a good start!
+
+To list all parameters, run `python -m cs336_basics.decoding --help`.
