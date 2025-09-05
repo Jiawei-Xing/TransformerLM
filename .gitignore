@@ -161,3 +161,8 @@ cython_debug/
 
 .ruff_cache/
 *.zip
+
+# running jobs
+*.out
+*.sh
+wandb/
