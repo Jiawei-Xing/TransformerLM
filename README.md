@@ -49,7 +49,7 @@ cd ..
 ```
 
 ## Run model
-Model source codes are updated in `cs336_basics` and has passed most tests except for the time and memory limits of BPE. Function modules are built from scratch instead of importing from PyTorch!
+Model source codes are updated in `cs336_basics` and have passed most tests except for the time and memory limits of BPE. Function modules are built from scratch instead of importing from PyTorch!
 
 ### BPE
 First, download datasets in `../data/` as described above. To train a byte pair encoding model on `TinyStoriesV2-GPT4-train.txt` as an example:
@@ -82,7 +82,7 @@ python -m cs336_basics.decoding --init "Once upon a time, " --checkpoint "../res
 This will print out a tiny story. Here is one example:
 ```
 Once upon a time, there was a little boy named Tom. Tom liked to play outside with his friends. One day, Tom and his friends decided to have a big party. They invited all their friends and family. The party was very happy to go to the party for the guests.
-At the party, they played games, ate yummy treats, and had lots of fun. Tom was not lay anymore. He played all day long and had lots...
+At the party, they played games, ate yummy treats, and had lots of fun. Tom was not lazy anymore. He played all day long and had lots...
 ```
 Not perfect but a good start!
 
