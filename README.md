@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a work sample adapted from Stanford CS336. Codes in `cs336_basics` were created by myself from scratch. This work sample is a simple transformer language model.
+This is a work sample adapted from Stanford CS336. Codes in `cs336_basics` were created by myself from scratch. This work sample is a simple transformer language model telling stories based on user-input prompts.
 
 For a full description of the assignment, see the assignment handout at
 [cs336_spring2025_assignment1_basics.pdf](./cs336_spring2025_assignment1_basics.pdf)
