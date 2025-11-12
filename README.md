@@ -1,5 +1,9 @@
 # CS336 Spring 2025 Assignment 1: Basics
 
+## Introduction
+
+This is a work sample adapted from Stanford CS336. Codes in `cs336_basics` were created by myself from scratch. This work sample is a simple transformer language model.
+
 For a full description of the assignment, see the assignment handout at
 [cs336_spring2025_assignment1_basics.pdf](./cs336_spring2025_assignment1_basics.pdf)
 
