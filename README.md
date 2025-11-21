@@ -76,7 +76,7 @@ python -m cs336_basics.training_together --input "../results/tokens.npy" --check
 ```
 This will generate a trained model in the checkpoint file.
 
-Here we use an example model including 4 transformer blocks with 16 heads multi-head attention, as well as classic pre-Norm, SwiGLU activation, and rotary position encoding. For training, we use AdamW optimizer with cosine annealing learning rate scheduling and gradient clipping. Users are encouraged to test different parameters. To list all parameters, run `python -m cs336_basics.training_together --help`.
+Here we use an example model including 4 transformer blocks with 16 heads multi-head attention, as well as classic pre-Norm, SwiGLU activation, and rotary position encoding. For training, we use AdamW optimizer with cosine annealing learning rate scheduling and gradient clipping. Users are encouraged to test different hyperparameters. To list all options, run `python -m cs336_basics.training_together --help`.
 
 ### Text generation
 To generate text from an initial sentence using the model:
@@ -90,4 +90,4 @@ At the party, they played games, ate yummy treats, and had lots of fun. Tom was 
 ```
 Not perfect but a good start!
 
-To list all parameters, run `python -m cs336_basics.decoding --help`.
+To list all options, run `python -m cs336_basics.decoding --help`.
